@@ -1,0 +1,117 @@
+/* styles.css */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(18, 88, 148);
+    padding: 1em 2em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.navbar-left a {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-icon {
+    display: block;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbar-right {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: fixed;
+    right: -250px;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #0d447f8e;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.navbar-right li {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.navbar-right li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-right li a:hover {
+    color: #f8f9fa;
+    text-decoration: underline;
+}
+
+.navbar-right.active {
+    display: block;
+    right: 0;
+}
+
+.navbar-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    display: none;
+}
+
+.navbar-right.active::before {
+    display: block;
+}
+
+.logout-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 4px;
+    position: absolute;
+    right: 5em;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    font-size: 1em;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+}

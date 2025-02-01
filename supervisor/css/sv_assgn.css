@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    width: 80%;
+}
+
+.background {
+    background: url("../../images/loginbackground.jpg") no-repeat center center/cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f9;
+    color: #777;
+    font-size: 0.9em;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+button:hover {
+    background-color: #184f8a;
+    opacity: 1;
+}
+
+input[type="file"],
+input[type="text"] {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.student-id-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.student-id-section label {
+    margin-right: 10px;
+}
+
+.student-id-section input {
+    padding: 10px;
+    margin-right: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.student-id-section button {
+    padding: 10px;
+    background-color: rgb(18, 88, 148);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.student-id-section button:hover {
+    background-color: rgb(36, 97, 150);
+}
+
+.project-section {
+    display: none;
+    margin-top: 30px;
+}
+
+.project-section p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.task-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.task-form button {
+    padding: 10px;
+    background-color: rgb(18, 88, 148);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.task-form button:hover {
+    background-color: rgb(36, 97, 150);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .navbar-right {
+        display: block;
+        position: fixed;
+        right: -250px;
+    }
+
+    .navbar-right.active {
+        right: 0;
+    }
+
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .student-id-section input,
+    .student-id-section button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
