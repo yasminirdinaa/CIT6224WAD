@@ -11,14 +11,14 @@
         <div class="signup-card">
             <h1>Supervisor Login</h1>
             <form action="svlogin.php" method="post">
-    <input type="text" placeholder="ID Number" name="id_number" required>
+    <input type="text" placeholder="ID Number" name="staff_id" required>
     <input type="password" placeholder="Password" name="password" required>
     <button type="submit" class="signup-btn">Login</button>
 </form>
  <!-- Forgot Password Link -->
  <a href="forgot_password.php" class="forgot-password-btn">Forgot Password? <br /></a>
             
-            <a href="../signup.php" class="signup-button">Sign Up</a>
+            <a href="../supervisor/svsignup.php" class="signup-button">Sign Up</a>
         </div>
 
         <a href="../loginpage.php" class="back-btn">Back</a>
@@ -46,12 +46,12 @@ include '../includes/db_connection.php'; // Include the database connection
 session_start(); // Start session before processing
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id_number = $_POST['id_number'];
+    $staff_id = $_POST['staff_id'];
     $password = $_POST['password'];
 
     // Prepare and execute the SQL statement securely
-    $stmt = $conn->prepare("SELECT fullname, password FROM users WHERE id_number = ? AND role = 'supervisor'");
-    $stmt->bind_param("s", $id_number);
+    $stmt = $conn->prepare("SELECT fullname, password FROM supervisors WHERE staff_id = ?");
+    $stmt->bind_param("s", $staff_id);
     $stmt->execute();
     $stmt->store_result();
 
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Verify the password
         if (password_verify($password, $hashed_password)) {
-            $_SESSION['id_number'] = $id_number;
+            $_SESSION['staff_id'] = $staff_id;
             $_SESSION['fullname'] = $fullname;
             // Redirect to the homepage upon successful login
             header("Location: svhomepage.php");
